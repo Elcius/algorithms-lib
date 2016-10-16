@@ -219,7 +219,7 @@ O algoritmo seleciona o menor caminho percorrido para conextar todos os nós de 
 ```python
 import algorithms
 # A entrada são as duas lista, a primeira de vertices e a segunda de arestas
-algorithms.kruskal(vertices, edges)
+algorithms.prim(vertices, edges)
 # A saída é uma lista de conexões entre os vértices
 ```
 Assim como o Alguritmo de Kruskal, o Algoritmo de Prim é usado para determinar o percurso menos custoso para percorrer

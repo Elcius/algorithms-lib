@@ -103,7 +103,7 @@ algorithms.is_subset_sum(set, sum)
 ```
 O algoritmo confere se em um dado set de números, um número inteiro está contido na soma de números deste set.
 
-* Complexidade O(sum x n)
+* Complexidade O(sum * n)
 
 ###### Multiplicação de matrizes
 ```python
@@ -115,6 +115,45 @@ matrix_chain_order(arr, n)
 O algoritmo dá a forma mais eficiente de multiplicar as matrizes de tamanho indicado
 
 * Complexidade O(n³)
+
+###### Quebra de palavras
+```python
+import algorithm
+# Dado uma string de letras não espaçadas, o algoritmo determina se é possível separá-las em
+# palavras de acordo com um dicionário
+word_break(string, dicionario)
+# A saída é True caso seja possível separar as palavras
+```
+O algoritmo é usado em corretores de texto como forma de corrigir erros de digitação.
+
+* Complexidade O(n * m), onde n é o tamanho da string e m é o tamanho do dicionário
+
+###### Troco em moedas
+```python
+import algorithm
+# A entrada é a quantidade de dinheiro a ser trocado e uma array com as moedas disponíveis para troco
+coin_change(quantidade, moedas_disponiveis)
+# A saída é o menor número de moedas quando esse é possível determinar. Caso não seja, retorna False
+```
+
+O algoritmo pode ser usado para cálcular o troco de uma determinada transação.
+
+* Complexidade O(n * m), onde n é o número de moedas e m é a quantidade de dinheiro a ser trocada
+
+###### Empilhamento de caixas
+```python
+import algorithm
+# A entrada é uma array de dimensões das caixas
+box_stack(dimensions)
+# A saída é a maior altura que as caixas podem ser empilhadas sem violar as restrições de tamanho
+```
+
+* Complexidade O(n²)
+
+O algoritmo pode ser usado para determinar a melhor forma de organizar objetos de dimensões fixas dentro
+de um espaço.
+
+* Complexidade O(n * m), onde n é o número de moedas e m é a quantidade de dinheiro a ser trocada
 
 #### 3.2 Algoritmos gulosos
 ###### Caminho mais curto (Algoritmo de Dijkstra)

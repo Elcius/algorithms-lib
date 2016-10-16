@@ -1,9 +1,9 @@
 # Biblioteca de otimização - APA 2016.1 - Python 3
 ##### Samuel Pordeus - Elcius Ferreira - Victor Franco
-A biblioteca contém 15 algoritmos de otimização, 9 de programação dinâmica e 6 algoritmos gulosos, abaixo podemos ver os algoritmos contidos e quem os implementou.
+A biblioteca contém 15 algoritmos de otimização, 9 de programação dinâmica e 6 algoritmos gulosos. Abaixo podemos ver os algoritmos contidos e quem os implementou.
 
 #### Guidelines
-A biblioteca segue os padrões de código em **Python** da [**PEP8**](https://www.python.org/dev/peps/pep-0008/)
+A biblioteca segue os padrões de código de **Python** da [**PEP8**](https://www.python.org/dev/peps/pep-0008/)
 
 ### 1. Designação dos algoritmos
 #### **_Samuel Pordeus_**

@@ -148,12 +148,10 @@ box_stack(dimensions)
 # A saída é a maior altura que as caixas podem ser empilhadas sem violar as restrições de tamanho
 ```
 
-* Complexidade O(n²)
-
 O algoritmo pode ser usado para determinar a melhor forma de organizar objetos de dimensões fixas dentro
 de um espaço.
 
-* Complexidade O(n * m), onde n é o número de moedas e m é a quantidade de dinheiro a ser trocada
+* Complexidade O(n²)
 
 #### 3.2 Algoritmos gulosos
 ###### Caminho mais curto (Algoritmo de Dijkstra)

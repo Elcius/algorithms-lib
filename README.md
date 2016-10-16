@@ -109,7 +109,7 @@ O algoritmo confere se em um dado set de números, um número inteiro está cont
 ```python
 import algorithms
 # A entrada é um array de números e o tamanho dela.
-matrix_chain_order(arr, n)
+algorithms.matrix_chain_order(arr, n)
 # A saída é a menor quantidade possível de múltiplicações das matrizes
 ```
 O algoritmo dá a forma mais eficiente de multiplicar as matrizes de tamanho indicado
@@ -121,7 +121,7 @@ O algoritmo dá a forma mais eficiente de multiplicar as matrizes de tamanho ind
 import algorithm
 # Dado uma string de letras não espaçadas, o algoritmo determina se é possível separá-las em
 # palavras de acordo com um dicionário
-word_break(string, dicionario)
+algorithms.word_break(string, dicionario)
 # A saída é True caso seja possível separar as palavras
 ```
 O algoritmo é usado em corretores de texto como forma de corrigir erros de digitação.
@@ -132,7 +132,7 @@ O algoritmo é usado em corretores de texto como forma de corrigir erros de digi
 ```python
 import algorithm
 # A entrada é a quantidade de dinheiro a ser trocado e uma array com as moedas disponíveis para troco
-coin_change(quantidade, moedas_disponiveis)
+algorithms.coin_change(quantidade, moedas_disponiveis)
 # A saída é o menor número de moedas quando esse é possível determinar. Caso não seja, retorna False
 ```
 
@@ -144,7 +144,7 @@ O algoritmo pode ser usado para cálcular o troco de uma determinada transação
 ```python
 import algorithm
 # A entrada é uma array de dimensões das caixas
-box_stack(dimensions)
+algorithms.box_stack(dimensions)
 # A saída é a maior altura que as caixas podem ser empilhadas sem violar as restrições de tamanho
 ```
 

@@ -37,8 +37,19 @@ A biblioteca segue os padrões de código de **Python** da [**PEP8**](https://ww
 2. Árvore geradora mínima (Algoritmo de Prim)
 
 ### 2. Testes
-Um conjunto de testes para cada algoritmo foi desenvolvido e é executado se você rodar o próprio script.
-Para gerar os testes automatizados, foi utilizado o módulo **Unit test**.
+Um conjunto de testes para cada algoritmo foi desenvolvido e é executado se você rodar o script do algoritmo em questão.
+Para a criação dos testes automatizados, foi utilizado o módulo [**unittest**](https://docs.python.org/3/library/unittest.html).
+
+
+Exemplo, algoritmo da Maior Subsequência Comum (LCS):
+```python
+import unittest
+class TestLcs(unittest.TestCase):
+
+    def test_example(self):
+        self.assertEqual(lcs('ABC', 'AC', 3, 2), 2)
+```
+
 
 ### 3. Algoritmos
 Os algoritmos estão implementados de forma que pode-se chamá-los por duas funções:

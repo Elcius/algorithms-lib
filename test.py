@@ -1,5 +1,6 @@
 import algorithms
 
+
 def test_colored_graphs():
     colors = ['Red', 'Blue', 'Green', 'Yellow', 'Black']
     graph_dict = {0: [1, 2, 5], 1: [0, 2, 3, 4], 2: [
@@ -14,9 +15,11 @@ def test_shortest_path():
 
 def test_fractional_knapsack():
     W = 50
-    items_list = [algorithms.Item(60, 10), algorithms.Item(40, 10), algorithms.Item(50, 30)]
+    items_list = [algorithms.Item(60, 10), algorithms.Item(
+        40, 10), algorithms.Item(50, 30)]
 
-    result = algorithms.call_fractional_knapsack(W, items_list, len(items_list))
+    result = algorithms.call_fractional_knapsack(
+        W, items_list, len(items_list))
     print(result)
 
 
@@ -39,11 +42,11 @@ def test_edit_distance():
     algorithms.call_edit_distance(str1, str2)
 
 
-
 def test_lcs():
     str1 = "halalkjfa"
     str2 = "jhkfahfljaflkajflkjaflkajlkj"
     algorithms.call_lcs(str1, str2, len(str1), len(str2))
+
 
 def test_is_subset_sum():
     vecs_and_sums = []
@@ -69,6 +72,7 @@ def test_is_subset_sum():
     vecs_and_sums.append(200)
     algorithms.call_is_subset_sum(vecs_and_sums)
 
+
 def test_matrix_chain_order():
     arr = [1, 2, 9, 7, 3]
     algorithms.call_matrix_chain_order(arr)
@@ -79,14 +83,14 @@ def test_binomial_coefficient():
     k = 2
     algorithms.call_binomial_coefficient(n, k)
 
-# Para testar o exemplo dos algoritmos basta retirar o comentário
-# test_shortest_path()
-# test_colored_graphs()
-# test_fractional_knapsack()
-# test_max_activities()
-# test_lcs()
-# test_max_knapsack()
-# test_edit_distance()
-# test_is_subset_sum()
-# test_matrix_chain_order()
-# test_binomial_coefficient()
+# Para testar o exemplo dos algoritmos basta retirar o comentario
+test_shortest_path()
+test_colored_graphs()
+test_fractional_knapsack()
+test_max_activities()
+test_lcs()
+test_max_knapsack()
+test_edit_distance()
+test_is_subset_sum()
+test_matrix_chain_order()
+test_binomial_coefficient()

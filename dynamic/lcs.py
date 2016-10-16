@@ -8,4 +8,4 @@ def lcs(str1, str2, A, B):
 
 def call_lcs(str1, str2, A, B):
     answer = lcs(str1, str2, A, B)
-    print(answer)
+    print("The longest common subsequence is: " + str(answer))

@@ -18,14 +18,14 @@ class TestLcs(unittest.TestCase):
     def test_small(self):
         self.assertEqual(lcs('ABC', 'AC', 3, 2), 2)
 
-    # def test_medium(self):
-    #     self.assertEqual(lcs('AAAAACDHEFA', 'AKJFHAEJFHAAOFH', 11, 15), 5)
+    def test_medium(self):
+        self.assertEqual(lcs('AAAAACDHEFA', 'AKJFHAEJFHAAOFH', 11, 15), 5)
 
-    # def test_medium2(self):
-    #     self.assertEqual(lcs('AAAACBABAJKCAB', 'CABCABCABA', 14, 10), 7)
+    def test_medium2(self):
+        self.assertEqual(lcs('AAAACBABAJKCAB', 'CABCABCABA', 14, 10), 7)
 
-    # def test_diff(self):
-    #     self.assertEqual(lcs('AAAAAAAAA', 'BBBBBBBBB', 9, 9), 0)
+    def test_diff(self):
+        self.assertEqual(lcs('AAAAAAAAA', 'BBBBBBBBB', 9, 9), 0)
 
 
 # Executa a suite de teste

@@ -1,3 +1,5 @@
+import unittest
+
 import algorithms
 
 
@@ -84,13 +86,13 @@ def test_binomial_coefficient():
     algorithms.call_binomial_coefficient(n, k)
 
 # Para testar o exemplo dos algoritmos basta retirar o comentario
-test_shortest_path()
-test_colored_graphs()
-test_fractional_knapsack()
-test_max_activities()
-test_lcs()
-test_max_knapsack()
-test_edit_distance()
-test_is_subset_sum()
-test_matrix_chain_order()
-test_binomial_coefficient()
+# test_shortest_path()
+# test_colored_graphs()
+# test_fractional_knapsack()
+# test_max_activities()
+# test_lcs()
+# test_max_knapsack()
+# test_edit_distance()
+# test_is_subset_sum()
+# test_matrix_chain_order()
+# test_binomial_coefficient()

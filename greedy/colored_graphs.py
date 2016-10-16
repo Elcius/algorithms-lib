@@ -15,16 +15,15 @@ def get_color_for_graph(graphs, graph, colors):
             return color
 
 
-def colored_graphs(graphs, colors):  # Input is
+def colored_graphs(graphs, colors):
     for graph in graphs:
         colors_of_graphs[graph] = get_color_for_graph(graphs, graph, colors)
         return colors_of_graphs
 
 
-def call_colored_graphs(graphs, colors):  # Input is
+def call_colored_graphs(graphs, colors):
     for graph in graphs:
         colors_of_graphs[graph] = get_color_for_graph(graphs, graph, colors)
     for graph in graphs:
         print("Graph: " + str(graph) + '\n' +
               "Color: " + colors_of_graphs[graph])
-# print(call_colored_graphs(graph_dict, colors))

@@ -23,6 +23,7 @@ def is_subset_sum(set, total_sum):
 
     return subset[total_sum][length_set]
 
+
 def call_is_subset_sum(vecs_and_sums):
     for i in range(0, len(vecs_and_sums), 2):
         if(is_subset_sum(vecs_and_sums[i], vecs_and_sums[i + 1]) == True):

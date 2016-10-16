@@ -37,8 +37,8 @@ A biblioteca segue os padrões de código de **Python** da [**PEP8**](https://ww
 2. Árvore geradora mínima (Algoritmo de Prim)
 
 ### 2. Testes
-* Um conjunto de testes para cada algoritmo foi desenvolvido e está no script test.py.
-* Para testar os algoritmos basta remover os comentários na chamada das funções de teste que desejar visualizar
+Um conjunto de testes para cada algoritmo foi desenvolvido e é executado se você rodar o próprio script.
+Para gerar os testes automatizados, foi utilizado o módulo **Unit test**.
 
 ### 3. Algoritmos
 Os algoritmos estão implementados de forma que pode-se chamá-los por duas funções:

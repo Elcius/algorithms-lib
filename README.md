@@ -11,6 +11,7 @@ A biblioteca segue os padrões de código em **Python** da [**PEP8**](https://ww
 1. Mochila binária
 2. Maior subsequência comum
 3. Distância de edição
+
 ##### **Gulosos**
 1. Caminho mais curto (Algoritmo de Dijkstra)
 2. Coloração de grafos
@@ -20,6 +21,7 @@ A biblioteca segue os padrões de código em **Python** da [**PEP8**](https://ww
 1. Triângulo de Pascal
 2. Soma de subconjunto
 3. Multiplicação de matrizes
+
 ##### **Gulosos**
 1. Seleção de atividades
 2. Mochila fracionária
@@ -34,7 +36,7 @@ A biblioteca segue os padrões de código em **Python** da [**PEP8**](https://ww
 2.
 
 ### 2. Testes
-* Um conjunto de teste para cada algoritmo foi desenvolvido e está no script test.py.
+* Um conjunto de testes para cada algoritmo foi desenvolvido e está no script test.py.
 * Para testar os algoritmos basta remover os comentários na chamada das funções de teste que desejar visualizar
 
 ### 3. Algoritmos

@@ -28,12 +28,12 @@ A biblioteca segue os padrões de código em **Python** da [**PEP8**](https://ww
 
 #### **_Victor Franco_**
 ##### **Dinâmicos**
-1.
-2.
-3.
+1. Quebra de palavras
+2. Troco em moedas
+3. Empilhamento de caixas
 ##### **Gulosos**
-1.
-2.
+1. Árvore geradora mínima (Algoritmo de Kruskal)
+2. Árvore geradora mínima (Algoritmo de Prim)
 
 ### 2. Testes
 * Um conjunto de testes para cada algoritmo foi desenvolvido e está no script test.py.

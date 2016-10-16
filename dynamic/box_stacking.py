@@ -6,20 +6,21 @@ from collections import namedtuple
 from itertools import permutations
 
 
-
-
 dimension = namedtuple("Dimension", "height length width")
 
 # Gera dimensões usando como base permutações das
 # dimensões com comprimento maior que altura
+
+
 def rotations(dimensions):
     rotations = []
     for dim in dimensions:
-    	# Permuta 
+        # Permuta
         for (height, length, width) in permutations((dim.height, dim.length, dim.width)):
             if length >= width:
                 rotations.append(dimension(height, length, width))
     return rotations
+
 
 def box_stack(dimensions):
     # Ordena as caixas com base nas dimensões
@@ -27,13 +28,13 @@ def box_stack(dimensions):
         rotations(dimensions),
         key=lambda dim: dim.length * dim.width,
         reverse=True)
-    
+
     T = [rotation.height for rotation in boxes]
     R = [i for i in range(len(boxes))]
 
     for i in range(1, len(boxes)):
         for j in range(0, i):
-            if (boxes[i].length < boxes[j].length 
+            if (boxes[i].length < boxes[j].length
                     and boxes[i].width < boxes[j].width):
                 height = T[j] + boxes[i].height
                 if height > T[i]:
@@ -41,8 +42,6 @@ def box_stack(dimensions):
                     R[i] = j
 
     return max(T)
-
-
 
 
 class TestBoxStack(unittest.TestCase):
@@ -54,7 +53,7 @@ class TestBoxStack(unittest.TestCase):
             dimension(5, 8, 4),
             dimension(5, 7, 5),
         ]), 22)
-        
+
     def test_2(self):
         self.assertEqual(box_stack([
             dimension(5, 5, 1),
@@ -63,7 +62,7 @@ class TestBoxStack(unittest.TestCase):
             dimension(1, 8, 3),
             dimension(8, 2, 10),
         ]), 22)
-        
+
     def test_3(self):
         self.assertEqual(box_stack([
             dimension(2, 1, 4),
@@ -81,7 +80,7 @@ class TestBoxStack(unittest.TestCase):
             dimension(9, 9, 9),
             dimension(2, 7, 1),
         ]), 34)
-        
+
     def test_5(self):
         self.assertEqual(box_stack([
             dimension(1, 1, 1),
@@ -90,8 +89,6 @@ class TestBoxStack(unittest.TestCase):
             dimension(5, 5, 5),
             dimension(3, 1, 5),
         ]), 19)
-
-
 
 
 # Executa a suite de teste

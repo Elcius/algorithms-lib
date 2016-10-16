@@ -1,4 +1,5 @@
 import sys
+import unittest
 
 
 def matrix_chain_order(arr, n):
@@ -25,7 +26,20 @@ def matrix_chain_order(arr, n):
     return matrix[1][n - 1]
 
 
-def call_matrix_chain_order(arr):
+class TestMatrixChainOrder(unittest.TestCase):
 
-    print("Minimum number of multiplications is " +
-          str(matrix_chain_order(arr, len(arr))))
+    def test_small(self):
+        self.assertEqual(matrix_chain_order([1, 2, 3, 4], 4), 18)
+
+    def test_medium(self):
+        self.assertEqual(matrix_chain_order([40, 20, 30, 10, 30], 5), 26000)
+
+    def test_medium2(self):
+        self.assertEqual(matrix_chain_order([10, 20, 30, 40, 30], 5), 30000)
+
+    def test_medium3(self):
+        self.assertEqual(matrix_chain_order([10, 20, 30], 3), 6000)
+
+# Executa a suite de teste
+if __name__ == '__main__':
+    unittest.main()

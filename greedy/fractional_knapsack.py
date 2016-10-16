@@ -1,3 +1,5 @@
+import unittest
+
 class Item:
     def __init__(self, v, w):
         self.value = v
@@ -27,6 +29,27 @@ def fractional_knapsack(W, items_list, n):
 
     return final_value
 
-def call_fractional_knapsack(W, items_list, n):
-    final_value = fractional_knapsack(W, items_list, n)
-    return ("Final value is: " + str(final_value))
+
+class TestFractionalKnapsack(unittest.TestCase):
+
+    def test_one(self):
+        items_list = [Item(60, 10), Item(40, 10), Item(50, 30)]
+        self.assertEqual(fractional_knapsack(50, items_list, 3), 150)
+
+    def test_two(self):
+        items_list = [Item(60, 10), Item(40, 10), Item(50, 30), Item(90, 20), Item(30, 50)]
+        self.assertEqual(fractional_knapsack(100, items_list, 5), 240)
+
+    def test_big_bag(self):
+        items_list = [Item(30, 10), Item(90, 6), Item(50, 3), Item(90, 2), Item(30, 5)]
+        self.assertEqual(fractional_knapsack(1000, items_list, 5), 290)
+
+    def test_no_space(self):
+        items_list = [Item(30, 20), Item(40, 50)]
+        self.assertEqual(fractional_knapsack(10, items_list, 2), 0)
+
+
+
+# Executa a suite de teste
+if __name__ == '__main__':
+    unittest.main()

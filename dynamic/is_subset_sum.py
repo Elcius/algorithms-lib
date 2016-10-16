@@ -1,3 +1,6 @@
+import unittest
+
+
 def is_subset_sum(set, total_sum):
 
     length_set = len(set)
@@ -24,11 +27,27 @@ def is_subset_sum(set, total_sum):
     return subset[total_sum][length_set]
 
 
-def call_is_subset_sum(vecs_and_sums):
-    for i in range(0, len(vecs_and_sums), 2):
-        if(is_subset_sum(vecs_and_sums[i], vecs_and_sums[i + 1]) == True):
-            print("Subset with sum '" +
-                  str(vecs_and_sums[i + 1]) + "' was found: " + str(vecs_and_sums[i]))
-        else:
-            print("Sum '" + str(vecs_and_sums[i + 1]) +
-                  "' not found:" + str(vecs_and_sums[i]))
+class TestIsSubsetSum(unittest.TestCase):
+
+    def test_selfnumber(self):
+        self.assertEqual(is_subset_sum([3, 34, 4, 12, 5, 2], 12), True)
+
+    def test_medium(self):
+        self.assertEqual(is_subset_sum(
+            [10, 300, 9080, 34, 704, 209, 340, 92], 10769), True)
+
+    def test_big_small_numbers(self):
+        self.assertEqual(is_subset_sum(
+            [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], 200), True)
+
+    def test_big_false(self):
+        self.assertEqual(is_subset_sum(
+            [30, 92, 41, 62, 555, 927, 39, 40, 93], 99999), False)
+
+    def test_zero(self):
+        self.assertEqual(is_subset_sum([0], 0), True)
+
+
+# Executa a suite de teste
+if __name__ == '__main__':
+    unittest.main()

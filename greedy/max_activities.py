@@ -1,4 +1,7 @@
-def max_activities(s , f):
+import unittest
+
+
+def max_activities(s, f):
     n = len(f)
     answer = []
 
@@ -15,7 +18,27 @@ def max_activities(s , f):
         if s[j] >= f[i]:
             answer.append(j),
             i = j
-    print(answer)
-def call_max_activities(s, f):
-    answer = max_activities(s, f)
-    print(answer)
+    return answer
+
+
+class TestMaxActivities(unittest.TestCase):
+
+    def test_one(self):
+        s = [1, 3, 0, 5, 8, 5]
+        f = [2, 4, 6, 7, 9, 9]
+        self.assertEqual(max_activities(s, f), [0, 1, 3, 4])
+
+    def test_two(self):
+        s = [3, 1, 5, 3, 8, 3, 9, 10, 20, 3]
+        f = [2, 2, 9, 2, 9, 3, 5, 6, 7, 2]
+        self.assertEqual(max_activities(s, f), [0, 0, 2, 6, 7, 8])
+
+    def test_steps(self):
+        s = [3, 1, 5, 3]
+        f = [0, 10, 5, 10]
+        self.assertEqual(max_activities(s, f), [0, 0, 1])
+
+
+# Executa a suite de teste
+if __name__ == '__main__':
+    unittest.main()

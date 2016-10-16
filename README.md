@@ -201,4 +201,28 @@ algorithms.fractional_knapsack(W, items_list, n)
 # A saída é o valor máximo da mochila
 ```
 A algoritmo da mochila binária pega itens que contém pesos e valores e coloca o máximo de valor possível mediante a capacidade da mochila. Ao contrário do algoritmo da Mochila Binária, aqui podemos quebrar os valores em várias partes, agilizando o algoritmo.
+
 * Complexidade O(n x log n)
+
+###### Árvore geradora mínima (Algoritmo de Kruskal)
+```python
+import algorithms
+# A entrada são as duas lista, a primeira de vertices e a segunda de conexões (arestas)
+algorithms.kruskal(vertices, edges)
+# A saída é uma lista de conexões entre os vértices
+```
+O algoritmo seleciona o menor caminho percorrido para conextar todos os nós de um grafo com o menor custo possível. É usado, por exemplo, em problemas que envolvem percorrer um espaço (físico ou virtual) no menor tempo/percurso possível, como gerenciar a entrega de envelopes em uma cidade.
+
+* Complexidade O(E log V), onde E é o número de conexões (arestas) e V é o número de vértices
+
+###### Árvore geradora mínima (Algoritmo de Prim)
+```python
+import algorithms
+# A entrada são as duas lista, a primeira de vertices e a segunda de arestas
+algorithms.kruskal(vertices, edges)
+# A saída é uma lista de conexões entre os vértices
+```
+Assim como o Alguritmo de Kruskal, o Algoritmo de Prim é usado para determinar o percurso menos custoso para percorrer
+todos os nós de um grafo, porém é especializado em grafos mais densos, para o caso em que existem mais arestas que vértices, onde sua performance é melhor. Um exemplo seria o roteamento de pacotes via redes de computador, que é um grafo bastante denso onde quanto menor a latência mais rápido o pacote chegará a outro lado rede.
+
+* Complexidade O(E + V log V) (Amortizada), onde E é o número de arestas e V é o número de vértices

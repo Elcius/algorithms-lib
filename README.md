@@ -31,6 +31,7 @@ A biblioteca segue os padrões de código em **Python** da [**PEP8**](https://ww
 1. Quebra de palavras
 2. Troco em moedas
 3. Empilhamento de caixas
+
 ##### **Gulosos**
 1. Árvore geradora mínima (Algoritmo de Kruskal)
 2. Árvore geradora mínima (Algoritmo de Prim)

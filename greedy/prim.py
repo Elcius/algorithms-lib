@@ -5,8 +5,9 @@ import unittest
 import collections
 import heapq
 
+
 def prim(vertices, edges):
-	# Cria uma hash com listas dentro
+        # Cria uma hash com listas dentro
     conections = collections.defaultdict(list)
     for edge in edges:
         # Adiciona as conexões de ida e de volta
@@ -31,7 +32,6 @@ def prim(vertices, edges):
     return mst
 
 
-
 class TestPrim(unittest.TestCase):
     def test_1(self):
         result = prim(['A', 'B', 'C', 'D'], [
@@ -40,12 +40,12 @@ class TestPrim(unittest.TestCase):
             ('C', 'D', 2),
             ('B', 'D', 4)
         ])
-        
+
         self.assertEqual(result, [
-        	('A', 'C', 1),
-        	('A', 'B', 2),
-        	('C', 'D', 2)])
-            
+            ('A', 'C', 1),
+            ('A', 'B', 2),
+            ('C', 'D', 2)])
+
     def test_2(self):
         result = prim(['A', 'B', 'C', 'D', 'E', 'F'], [
             ('A', 'B', 1),
@@ -55,12 +55,12 @@ class TestPrim(unittest.TestCase):
             ('B', 'D', 2),
             ('C', 'D', 1)
         ])
-        
+
         self.assertEqual(result, [
-        	('A', 'B', 1),
-        	('B', 'D', 2),
-        	('D', 'C', 1)])
-            
+            ('A', 'B', 1),
+            ('B', 'D', 2),
+            ('D', 'C', 1)])
+
     def test_3(self):
         result = prim(['A', 'B', 'C', 'D', 'E', 'F'], [
             ('A', 'B', 1),
@@ -73,14 +73,14 @@ class TestPrim(unittest.TestCase):
             ('D', 'E', 6),
             ('E', 'F', 1),
         ])
-        
+
         self.assertEqual(result, [
-        	('A', 'B', 1),
-        	('A', 'C', 2),
-        	('B', 'D', 4),
-        	('D', 'F', 5),
-        	('F', 'E', 1)])
-        
+            ('A', 'B', 1),
+            ('A', 'C', 2),
+            ('B', 'D', 4),
+            ('D', 'F', 5),
+            ('F', 'E', 1)])
+
     def test_4(self):
         result = prim(['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'], [
             ('A', 'B', 1),
@@ -99,17 +99,17 @@ class TestPrim(unittest.TestCase):
             ('G', 'I', 6),
             ('H', 'I', 7),
         ])
-        
+
         self.assertEqual(result, [
-        	('A', 'B', 1),
-        	('A', 'C', 6),
-        	('B', 'F', 6),
-        	('F', 'E', 7),
-        	('E', 'I', 7),
-        	('I', 'G', 6), 
-        	('I', 'H', 7),
-        	('C', 'D', 8)])
- 
+            ('A', 'B', 1),
+            ('A', 'C', 6),
+            ('B', 'F', 6),
+            ('F', 'E', 7),
+            ('E', 'I', 7),
+            ('I', 'G', 6),
+            ('I', 'H', 7),
+            ('C', 'D', 8)])
+
 # Executa a suite de teste
 if __name__ == '__main__':
     unittest.main()

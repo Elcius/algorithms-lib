@@ -1,4 +1,6 @@
-# some_file.py
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 import sys
 sys.path.insert(0, 'greedy')
 
@@ -11,9 +13,11 @@ from max_activities import max_activities
 from fractional_knapsack import Item, fractional_knapsack
 # Victor
 from kruskal import kruskal
+from prim import prim
 
 sys.path.insert(0, 'dynamic')
-# Algoritmos dinamicos
+
+# Algoritmos dinâmicos
 # Samuel
 from lcs import lcs
 from max_knapsack import max_knapsack

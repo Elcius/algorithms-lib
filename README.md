@@ -103,18 +103,55 @@ algorithms.is_subset_sum(set, sum)
 ```
 O algoritmo confere se em um dado set de números, um número inteiro está contido na soma de números deste set.
 
-* Complexidade O(sum x n)
+* Complexidade O(sum * n)
 
 ###### Multiplicação de matrizes
 ```python
 import algorithms
 # A entrada é um array de números e o tamanho dela.
-matrix_chain_order(arr, n)
+algorithms.matrix_chain_order(arr, n)
 # A saída é a menor quantidade possível de múltiplicações das matrizes
 ```
 O algoritmo dá a forma mais eficiente de multiplicar as matrizes de tamanho indicado
 
 * Complexidade O(n³)
+
+###### Quebra de palavras
+```python
+import algorithm
+# Dado uma string de letras não espaçadas, o algoritmo determina se é possível separá-las em
+# palavras de acordo com um dicionário
+algorithms.word_break(string, dicionario)
+# A saída é True caso seja possível separar as palavras
+```
+O algoritmo é usado em corretores de texto como forma de corrigir erros de digitação.
+
+* Complexidade O(n * m), onde n é o tamanho da string e m é o tamanho do dicionário
+
+###### Troco em moedas
+```python
+import algorithm
+# A entrada é a quantidade de dinheiro a ser trocado e uma array com as moedas disponíveis para troco
+algorithms.coin_change(quantidade, moedas_disponiveis)
+# A saída é o menor número de moedas quando esse é possível determinar. Caso não seja, retorna False
+```
+
+O algoritmo pode ser usado para cálcular o troco de uma determinada transação.
+
+* Complexidade O(n * m), onde n é o número de moedas e m é a quantidade de dinheiro a ser trocada
+
+###### Empilhamento de caixas
+```python
+import algorithm
+# A entrada é uma array de dimensões das caixas
+algorithms.box_stack(dimensions)
+# A saída é a maior altura que as caixas podem ser empilhadas sem violar as restrições de tamanho
+```
+
+O algoritmo pode ser usado para determinar a melhor forma de organizar objetos de dimensões fixas dentro
+de um espaço.
+
+* Complexidade O(n²)
 
 #### 3.2 Algoritmos gulosos
 ###### Caminho mais curto (Algoritmo de Dijkstra)
@@ -164,4 +201,28 @@ algorithms.fractional_knapsack(W, items_list, n)
 # A saída é o valor máximo da mochila
 ```
 A algoritmo da mochila binária pega itens que contém pesos e valores e coloca o máximo de valor possível mediante a capacidade da mochila. Ao contrário do algoritmo da Mochila Binária, aqui podemos quebrar os valores em várias partes, agilizando o algoritmo.
+
 * Complexidade O(n x log n)
+
+###### Árvore geradora mínima (Algoritmo de Kruskal)
+```python
+import algorithms
+# A entrada são as duas lista, a primeira de vertices e a segunda de conexões (arestas)
+algorithms.kruskal(vertices, edges)
+# A saída é uma lista de conexões entre os vértices
+```
+O algoritmo seleciona o menor caminho percorrido para conextar todos os nós de um grafo com o menor custo possível. É usado, por exemplo, em problemas que envolvem percorrer um espaço (físico ou virtual) no menor tempo/percurso possível, como gerenciar a entrega de envelopes em uma cidade.
+
+* Complexidade O(E log V), onde E é o número de conexões (arestas) e V é o número de vértices
+
+###### Árvore geradora mínima (Algoritmo de Prim)
+```python
+import algorithms
+# A entrada são as duas lista, a primeira de vertices e a segunda de arestas
+algorithms.prim(vertices, edges)
+# A saída é uma lista de conexões entre os vértices
+```
+Assim como o Alguritmo de Kruskal, o Algoritmo de Prim é usado para determinar o percurso menos custoso para percorrer
+todos os nós de um grafo, porém é especializado em grafos mais densos, para o caso em que existem mais arestas que vértices, onde sua performance é melhor. Um exemplo seria o roteamento de pacotes via redes de computador, que é um grafo bastante denso onde quanto menor a latência mais rápido o pacote chegará a outro lado rede.
+
+* Complexidade O(E + V log V) (Amortizada), onde E é o número de arestas e V é o número de vértices

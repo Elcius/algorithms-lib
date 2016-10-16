@@ -1,6 +1,6 @@
 # Biblioteca de otimização - APA 2016.1 - Python 3
 ##### Samuel Pordeus - Elcius Ferreira - Victor Franco
-A biblioteca contém 15 algoritmos de otimização, 9 de programação dinâmica e 2 algoritmos gulosos, abaixo podemos ver os algoritmos contidos e quem os implementou.
+A biblioteca contém 15 algoritmos de otimização, 9 de programação dinâmica e 4 algoritmos gulosos, abaixo podemos ver os algoritmos contidos e quem os implementou.
 
 #### Guidelines
 A biblioteca segue os padrões de código em **Python** da [**PEP8**](https://www.python.org/dev/peps/pep-0008/)
@@ -91,7 +91,7 @@ algorithms.binomial_coefficient(n, k)
 ```
 O algoritmo pega o número de linhas e de colunas e cálcula pelo triângulo de pascal
 o coeficiente binomial. Esse algoritmo é utilizado na matemática.
-* Complexidade O(n*k)
+* Complexidade O(n x k)
 
 ###### Soma de subconjunto
 ```python

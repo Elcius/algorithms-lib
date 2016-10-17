@@ -129,7 +129,7 @@ O algoritmo dá a forma mais eficiente de multiplicar as matrizes de tamanho ind
 
 ###### Quebra de palavras
 ```python
-import algorithm
+import algorithms
 # Dado uma string de letras não espaçadas, o algoritmo determina se é possível separá-las em
 # palavras de acordo com um dicionário
 algorithms.word_break(string, dicionario)
@@ -141,7 +141,7 @@ O algoritmo é usado em corretores de texto como forma de corrigir erros de digi
 
 ###### Troco em moedas
 ```python
-import algorithm
+import algorithms
 # A entrada é a quantidade de dinheiro a ser trocado e uma array com as moedas disponíveis para troco
 algorithms.coin_change(quantidade, moedas_disponiveis)
 # A saída é o menor número de moedas quando esse é possível determinar. Caso não seja, retorna False
@@ -153,7 +153,7 @@ O algoritmo pode ser usado para cálcular o troco de uma determinada transação
 
 ###### Empilhamento de caixas
 ```python
-import algorithm
+import algorithms
 # A entrada é uma array de dimensões das caixas
 algorithms.box_stack(dimensions)
 # A saída é a maior altura que as caixas podem ser empilhadas sem violar as restrições de tamanho

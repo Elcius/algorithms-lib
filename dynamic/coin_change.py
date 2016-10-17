@@ -5,7 +5,7 @@ import sys
 import unittest
 
 
-def coin_charge_internal(quantidade, moedas, cache):
+def coin_change_internal(quantidade, moedas, cache):
     """Função interna para calculo de troco"""
     # Caso a quantidade seja zero, retorna zero, terminando a recursão
     if quantidade == 0:
@@ -24,7 +24,7 @@ def coin_charge_internal(quantidade, moedas, cache):
             # Caso o resultado seja válido (não seja sys.maxsize), então
             # verifica se ele ainda é menor que o último resultado obtido para
             # esse problelam
-            resultado = coin_charge_internal(quantidade - moeda, moedas, cache)
+            resultado = coin_change_internal(quantidade - moeda, moedas, cache)
             if resultado != sys.maxsize and (resultado + 1) < possibilidade:
                 possibilidade = resultado + 1
 
@@ -33,12 +33,12 @@ def coin_charge_internal(quantidade, moedas, cache):
     return possibilidade
 
 
-def coin_charge(quantidade, moedas):
+def coin_change(quantidade, moedas):
     """Calcula um troco para dada quantidade utilizando as moedas fornecidas"""
     cache = {}
 
     # Pega o resultado e verifica se ele é válido
-    resultado = coin_charge_internal(quantidade, moedas, cache)
+    resultado = coin_change_internal(quantidade, moedas, cache)
     if resultado == sys.maxsize:
         return False
 
@@ -49,25 +49,25 @@ def coin_charge(quantidade, moedas):
 class TestCoinCharge(unittest.TestCase):
 
     def test_50(self):
-        self.assertEqual(coin_charge(50, [5, 10, 50]), 1)
+        self.assertEqual(coin_change(50, [5, 10, 50]), 1)
 
     def test_100(self):
-        self.assertEqual(coin_charge(50, [5, 10, 50]), 2)
+        self.assertEqual(coin_change(50, [5, 10, 50]), 2)
 
     def test_75(self):
-        self.assertEqual(coin_charge(75, [5, 10, 50]), 4)
+        self.assertEqual(coin_change(75, [5, 10, 50]), 4)
 
     def test_100(self):
-        self.assertEqual(coin_charge(100, [3, 7]), 16)
+        self.assertEqual(coin_change(100, [3, 7]), 16)
 
     def test_1000(self):
-        self.assertEqual(coin_charge(1000, [9, 1]), 112)
+        self.assertEqual(coin_change(1000, [9, 1]), 112)
 
     def test_789(self):
-        self.assertEqual(coin_charge(789, [8, 5, 3]), 99)
+        self.assertEqual(coin_change(789, [8, 5, 3]), 99)
 
     def test_failue(self):
-        self.assertEqual(coin_charge(789, [2, 4, 8]), False)
+        self.assertEqual(coin_change(789, [2, 4, 8]), False)
 
 
 # Executa a suite de teste

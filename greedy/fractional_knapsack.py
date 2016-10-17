@@ -41,7 +41,7 @@ class TestFractionalKnapsack(unittest.TestCase):
 
     def test_two(self):
         items_list = [Item(60, 10), Item(40, 10), Item(50, 30), Item(90, 20), Item(30, 50)]
-        self.assertEqual(fractional_knapsack(100, items_list, 5), 240)
+        self.assertEqual(fractional_knapsack(100, items_list, 5), 258)
 
     def test_big_bag(self):
         items_list = [Item(30, 10), Item(90, 6), Item(50, 3), Item(90, 2), Item(30, 5)]
@@ -49,7 +49,7 @@ class TestFractionalKnapsack(unittest.TestCase):
 
     def test_no_space(self):
         items_list = [Item(30, 20), Item(40, 50)]
-        self.assertEqual(fractional_knapsack(10, items_list, 2), 0)
+        self.assertEqual(fractional_knapsack(10, items_list, 2), 15.0)
 
 
 

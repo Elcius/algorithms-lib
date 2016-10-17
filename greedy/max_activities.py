@@ -13,7 +13,7 @@ def max_activities(s, f):
     answer.append(i),
 
     # Consider rest of the activities
-    for j in xrange(n):
+    for j in range(n):
 
         # If this activity has start time greater than
         # or equal to the finish time of previously

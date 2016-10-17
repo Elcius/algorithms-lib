@@ -40,7 +40,6 @@ A biblioteca segue os padrões de código de **Python** da [**PEP8**](https://ww
 Um conjunto de testes para cada algoritmo foi desenvolvido e é executado se você rodar o script do algoritmo em questão.
 Para a criação dos testes automatizados, foi utilizado o módulo [**unittest**](https://docs.python.org/3/library/unittest.html).
 
-
 Exemplo, algoritmo da Maior Subsequência Comum (LCS):
 ```python
 import unittest
@@ -50,6 +49,11 @@ class TestLcs(unittest.TestCase):
         self.assertEqual(lcs('ABC', 'AC', 3, 2), 2)
 ```
 
+Para rodar toda a suíte de testes, use o seguinte comando no terminal no diretório raiz do projeto:
+
+```
+$ make test
+```
 
 ### 3. Algoritmos
 Os algoritmos estão implementados de forma que pode-se chamá-los por duas funções:

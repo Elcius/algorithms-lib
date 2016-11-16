@@ -5,6 +5,8 @@ A biblioteca contém 15 algoritmos de otimização, 9 de programação dinâmica
 #### Guidelines
 A biblioteca segue os padrões de código de **Python** da [**PEP8**](https://www.python.org/dev/peps/pep-0008/)
 
+## Módulo principal - Programação dinâmica e algoritmos gulosos
+
 ### 1. Designação dos algoritmos
 #### **_Samuel Pordeus_**
 ##### **Dinâmicos**

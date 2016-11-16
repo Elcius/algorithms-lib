@@ -7,7 +7,7 @@ from ResultHelpers import TSPResult, BasinResult
 class SearchTests(unittest.TestCase):
 
     def setUp(self):
-        # berlin52 = self.TSPBEST
+        # berlin52 = 7542
         # kroa150 = 26524
         # krob100 = 22141
         # pr107 = 44303

@@ -2,7 +2,9 @@
 
 ## TODO
 
-Configurem vossos algoritmos de forma que eu possa executá-los de forma ideal, os parâmetros estão localizados na parte de configuração da suíte de testes
+Configurem os algoritmos de maneira que eu possa executá-los de forma ideal. Os parâmetros estão localizados na parte de configuração da suíte de testes
+
+As funções em comum já estão num arquivo chamado utilities.py
 
 Padronizar os comentários em português
 

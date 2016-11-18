@@ -15,7 +15,8 @@ Candidates for neighboring moves can be generated deterministically for the enti
 or the neighborhood can be stochastically sampled to a fixed size, trading off efficiency for accuracy.
 
 '''
-from Utilities import constructInitialSolution, tourCost, stochasticTwoOptWithEdges
+from algorithms.utilities import constructInitialSolution, tourCost, stochasticTwoOptWithEdges
+import time
 
 # Function that returns a best candidate, sorting by cost
 
@@ -54,12 +55,13 @@ def generateCandidates(best, tabuList, points):
 
 
 def search(points, maxIterations, maxTabu, maxCandidates):
+    t_end = time.time() + 60
     # construct a random tour
     best = {}
     best["permutation"] = constructInitialSolution(points)
     best["cost"] = tourCost(best["permutation"])
     tabuList = []
-    while maxIterations > 0:
+    while maxIterations > 0 and time.time() < t_end:
         # Generate candidates using stocahstic 2-opt near current best candidate
         # Use Tabu list to not revisit previous rewired edges
         candidates = []

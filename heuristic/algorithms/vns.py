@@ -20,7 +20,8 @@ technique is being applied.
 The Variable Neighborhood Descent (VND) can be embedded in the Variable Neighborhood Search
 as a the Local Search procedure and has been shown to be most effective.
 '''
-from Utilities import stochasticTwoOpt, tourCost, constructInitialSolution
+from algorithms.utilities import stochasticTwoOpt, tourCost, constructInitialSolution
+import time
 
 def localSearch(best, maxIter, neighborhood):
     count =0
@@ -40,12 +41,13 @@ def localSearch(best, maxIter, neighborhood):
     return best
 
 def search(points,neighborhoods, maxNoImprove, maxNoImproveLocalSearch):
+    t_end = time.time() + 60
     # First construct the initial solution. We use a random permutation as the initial solution
     best ={}
     best["permutation"] = constructInitialSolution(points)
     best["cost"] = tourCost(best["permutation"])
     noImproveCount =0
-    while noImproveCount<=maxNoImprove:
+    while noImproveCount<=maxNoImprove and time.time() < t_end:
         candidate ={}
         candidate["permutation"] = best["permutation"]
         # for each neighborhood in neighborhoods

@@ -30,3 +30,9 @@ from binomial_coefficient import binomial_coefficient
 from word_break import word_break
 from box_stacking import box_stack
 from coin_change import coin_change
+
+sys.path.insert(0, 'heuristic/algorithms')
+
+#Metaheuristicas
+#Samuel
+import tabu_search

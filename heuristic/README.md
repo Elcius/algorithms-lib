@@ -1,4 +1,15 @@
 # Módulo adicional - Otimização heurística
+
+## TODO
+
+Configurem vossos algoritmos de forma que eu possa executá-los de forma ideal, os parâmetros estão localizados na parte de configuração da suíte de testes
+
+Padronizar os comentários em português
+
+Reorganizar o módulo
+
+Se sobrar tempo, testaremos com: 25, 50, 100, 250 iterações
+
 ##### Samuel Pordeus - Elcius Ferreira - Victor Franco
 
 A biblioteca contém 3 abordagens metaheurísticas para resolução do **_Problema do Caixeiro Viajante_**
@@ -20,22 +31,25 @@ Tabu Search
 Um conjunto de testes para cada algoritmo foi desenvolvido e é executado se você rodar o script de teste do algoritmo em questão.
 Para a criação dos testes automatizados, utilizamos o módulo [**unittest**](https://docs.python.org/3/library/unittest.html).
 
-Exemplo, algoritmo da Maior Subsequência Comum (LCS):
 ```python
 import unittest
 class SearchTests(unittest.TestCase):
 
     def setUp(self):
         self.Vector = [1, 2]
-        TSP = []
-        TSP.insert(0, readtsplib.readData('TSPLIB/pr107.tsp'))
-        TSP.insert(1, 44303)
-        self.TSPDATA = TSP[0]
-        self.TSPBEST = TSP[1]
+        self.TSP = []
+        self.TSP.insert(0, [7542, readtsplib.readData('TSPLIB/berlin52.tsp')])
+        self.TSP.insert(1, [26524, readtsplib.readData('TSPLIB/kroa150.tsp')])
+        self.TSP.insert(2, [22141, readtsplib.readData('TSPLIB/krob100.tsp')])
+        self.TSP.insert(3, [44303, readtsplib.readData('TSPLIB/pr107.tsp')])
+        self.TSP.insert(4, [108159, readtsplib.readData('TSPLIB/pr76.tsp')])
+
 ```
+Cada função de teste das três metaheurísticas roda o algoritmo **10** vezes. Algumas configurações do setup podem ser alteradas na suíte de testes
+
 Rodando o script no terminal:
 ```
-$ python3 TestPr107.py
+$ python3 test_suite.py
 ```
 ---
 ### 3. Arquivos de entrada

@@ -15,42 +15,41 @@ As an alternative to using a threshold, the RCL can be constrained to the top n%
 selected from each construction cycle.
 
 '''
-from Utilities import stochasticTwoOpt, tourCost, euclideanDistance
+from algorithms.utilities import stochasticTwoOpt, tourCost, euclideanDistance
 import random
-
+import time
 
 def constructGreedySolution(perm, alpha):
     candidate = {}
-    # Select one point randomly
+    # Seleciona um ponto da lista aleatoriamente
     problemSize = len(perm)
     candidate["permutation"] = [perm[random.randrange(0, problemSize)]]
-    # While candidate's size is not equal to the original permutation size
+    # Enquanto o tamanho do candidato não for igual ao tamanho da permutação
     while len(candidate["permutation"]) < problemSize:
-        # Get all points except for ones present in candidate solution
+        # Pega todos os pontos, exceto os já presentes na solução candidata
         candidates = [item for item in perm if item not in candidate["permutation"]]
-        # Calculate the cost of adding feature to solution
-        # Here a 'feature' is defined by the how far other points are to the last element of the candidates list
+        # Calcula o custo de adicionar uma feature à solução
+        # A 'feature' é definida por quão longe os outros pontos estão do último elemento da lista de candidatos
         costs = []
         candidateSize = len(candidate["permutation"])
         for item in candidates:
             costs.append(euclideanDistance(candidate["permutation"][candidateSize - 1], item))
-        # Determining the max cost and min cost from the feature set
+        # Determina o menor e o maior custo do determinado set
         rcl, maxCost, minCost = [], max(costs), min(costs)
-        # Build the RCL by:
-        # We add the one which is <= the  minimum + adjusted feature cost as per RCL formula below
-        # Here the smaller the distance, smaller will be the 'final' tour cost!
-        # for each feature cost:
-        for index, cost in enumerate(costs):  # so that we can get both the index and the item while looping
+        # Construimos o RCL da seguinte maneira:
+        # Adicionamos o que for menor ou igual ao mínimo + o custo da feature pela fórmula da RCL
+        # Quanto menor a distância aqui, menor o custo final do algoritmo
+        # Custo de cada Feature:
+        for index, cost in enumerate(costs):  # Para conseguir o index e o item enquanto faz o loop
             # IF Fcurrent <= Fmin + alpha * (Fmax-Fmin) THEN
             if (cost <= minCost + alpha * (maxCost - minCost)):
-                # Add it to the RCL
+                # Adiciona ao RCL
                 rcl.append(candidates[index])
-        # Select random feature from RCL and add it to the solution
+        # Seleciona feature aleatório do RCL e adiciona à solução
         candidate["permutation"].append(rcl[random.randrange(0, len(rcl))])
 
-    # calculate the final tour cost before returning the candidate solution
+    # Calcula o custo final antes de retornar a solução candidata
     candidate["cost"] = tourCost(candidate["permutation"])
-    # return solution
     return candidate
 
 
@@ -60,7 +59,7 @@ def localSearch(best, maxIter):
         candidate = {}
         candidate["permutation"] = stochasticTwoOpt(best["permutation"])
         candidate["cost"] = tourCost(candidate["permutation"])
-        if candidate["cost"] < best["cost"]:  # We also restart the search when we find the local optima
+        if candidate["cost"] < best["cost"]:
             best, count = candidate, 0
         else:
             count += 1
@@ -69,14 +68,14 @@ def localSearch(best, maxIter):
 
 
 def search(points, maxIterations, maxNoImprove, threshold):
+    t_end = time.time() + 60
     best = None
-    while maxIterations > 0:
-        # Construct a Greedy solution
+    while maxIterations > 0 and time.time() < t_end:
+        # Constroi a solução gulosa
         candidate = constructGreedySolution(points, threshold)
-        # refine it using a local search heuristic
+        # Refina usando a busca local
         candidate = localSearch(candidate, maxNoImprove)
         if best == None or candidate["cost"] < best["cost"]:
             best = candidate
         maxIterations -= 1
-
     return best
